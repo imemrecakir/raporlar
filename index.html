@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Raporlar</title>
+    <style>
+        #iframe {
+            width: 90%;
+            height: 85%;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <script>
+        function show() {
+            var article = document.getElementById("articles");
+            var articleValue = article.value;
+            document.getElementById("iframe").src = "articles/" + articleValue + ".html";
+        }
+        function reset() {
+            document.getElementById("iframe").src = "";
+        }
+
+        function iframeDidLoad() {
+            alert("Dones");
+        }
+    </script>
+
+    <div class="dropdown" align="center" style="margin-top: 30px;">
+        <label for="articles">Rapor Seçimi Yapınız : </label>
+        <select id="articles" name="articles" style="margin-left: 10px; margin-right: 10px;">
+            <option value="donemselbakiye">Dönemsel Bakiye</option>
+            <option value="detayliborcdokumu">Detaylı Borç Dökümü</option>
+            <option value="kategoridetayli">Kategori Detaylı Bakiye Listesi</option>
+            <option value="ozetgelirgider">Özet Gelir-Gider</option>
+        </select>
+        <button id="show" class="show" onclick="show()">Göster</button>
+        <button id="reset" class="reset" onclick="reset()">Reset</button>
+    </div>
+    <br>
+    <div class="iframeDiv">
+        <iframe id="iframe" class="iframe" frameborder="1">
+
+        </iframe>
+    </div>
+</body>
+
+</html>
