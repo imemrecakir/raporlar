@@ -3,7 +3,61 @@
 <head>
     <title>Raporlar</title>
     <style>
-        #iframe {
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --select-border: #26ACE8;
+            --select-focus: blue;
+            --select-arrow: var(--select-border);
+        }
+
+        select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+        label {
+            color: #26ACE8;
+        }
+
+        button {
+            border-style: solid;
+            border-color: #26ACE8;
+            border-radius: 10px;
+            border-width: 2px;
+            padding: 5px;
+            color: #26ACE8;
+            background-color: transparent;
+            height: 5%;
+            width: 75px;
+        }
+
+        button:hover {
+            border-color: white;
+            color: white;
+            background-color: #26ACE8;
+        }
+
+
+        select {
+            background-color: white;
+            color: #26ACE8;
+            border-style: solid;
+            border-color: #26ACE8;
+            border-radius: 10px;
+            border-width: 2px;
+            padding: 5px;
+            margin: 0;
+            width: 25%;
+            height: 5%;
+        }
+
+        iframe {
+            border-style: solid;
+            border-color: #26ACE8;
             width: 90%;
             height: 85%;
         }
@@ -27,8 +81,7 @@
     </script>
 
     <div class="dropdown" align="center" style="margin-top: 30px;">
-        <label for="articles">Rapor Seçimi Yapınız : </label>
-        <select id="articles" name="articles" style="margin-left: 10px; margin-right: 10px; width: max-content;">
+        <select id="articles" name="articles" style="margin-left: 10px; margin-right: 10px;">
             <option value="donemselbakiye">Dönemsel Bakiye</option>
             <option value="detayliborcdokumu">Detaylı Borç Dökümü</option>
             <option value="kategoridetayli">Kategori Detaylı Bakiye Listesi</option>
